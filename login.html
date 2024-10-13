@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Login From</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      outline: none;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      height: 100vh;
+      width: 100%;
+      background: #EFACAC;
+    }
+    .container {
+      background: #fff;
+      width: 410px;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .text {
+      font-size: 35px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .container form {
+      margin-top: -20px;
+    }
+    .container form .data {
+      height: 45px;
+      width: 100%;
+      margin: 40px 0;
+    }
+    form .data label {
+      font-size: 18px;
+    }
+    form .data input {
+      height: 100%;
+      width: 100%;
+      padding-left: 10px;
+      font-size: 17px;
+      border: 1px solid silver;
+    }
+    form .data input:focus {
+      border-color: #3498db;
+      border-bottom-width: 2px;
+    }
+    form .forgot-pass {
+      margin-top: -8px;
+    }
+    form .forgot-pass a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    form .forgot-pass a:hover {
+      text-decoration: underline;
+    }
+    form .btn {
+      margin: 30px 0;
+      height: 45px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    form .btn .inner {
+      height: 100%;
+      width: 300%;
+      position: absolute;
+      left: -100%;
+      z-index: -1;
+      background: #f18075;
+      transition: all 0.4s;
+    }
+
+    .gas {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      text-decoration: none;
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      color: #fff;
+      background: #EFACAC;
+    }
+
+    form .signup-link {
+      text-align: center;
+    }
+    form .signup-link a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    form .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="text">
+      <img src="icon/nom nom Icon b.png" width="120"></div>
+    <div class="text">Login</div>
+    <form action="#">
+      <div class="data">
+        <label>Email or Phone</label>
+        <input type="text" required>
+      </div>
+      <div class="data">
+        <label>Password</label>
+        <input type="password" required>
+      </div>
+      <div class="forgot-pass">
+        <a href="#">Forgot Password?</a>
+      </div>
+      <div class="gas">
+        <a href="beranda.html" style="color: #fff; text-decoration: none;">Login</a>
+      </div>
+      <div class="signup-link">
+        Not a member? <a href="signup.html">Signup now</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

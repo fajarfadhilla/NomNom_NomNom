@@ -1,0 +1,54 @@
+
+<div id="recipe">
+  <h2>Recipe: <input type="text" id="recipe-name" /></h2>
+  <table id="ingredients">
+    <tr>
+      <th>Ingredient</th>
+      <th>Quantity</th>
+      <th>Calories per unit</th>
+      <th>Total Calories</th>
+    </tr>
+    <tr>
+      <td><input type="text" id="ingredient-1" /></td>
+      <td><input type="number" id="quantity-1" /></td>
+      <td><input type="number" id="calories-per-unit-1" /></td>
+      <td id="total-calories-1"></td>
+    </tr>
+  </table>
+  <button id="add-ingredient">Add Ingredient</button>
+  <p id="total-calories"></p>
+</div>
+
+<script>
+  const ingredientsTable = document.getElementById("ingredients");
+  const totalCaloriesElement = document.getElementById("total-calories");
+  const addIngredientButton = document.getElementById("add-ingredient");
+
+  addIngredientButton.addEventListener("click", addIngredient);
+
+  function addIngredient() {
+    const newRow = ingredientsTable.insertRow(-1);
+    newRow.innerHTML = `
+      <td><input type="text" /></td>
+      <td><input type="number" /></td>
+      <td><input type="number" /></td>
+      <td></td>
+    `;
+  }
+
+  ingredientsTable.addEventListener("input", calculateTotalCalories);
+
+  function calculateTotalCalories() {
+    let totalCalories = 0;
+    const rows = ingredientsTable.rows;
+    for (let i = 1; i < rows.length; i++) {
+      const ingredientRow = rows[i];
+      const quantity = parseInt(ingredientRow.cells[1].children[0].value);
+      const caloriesPerUnit = parseInt(ingredientRow.cells[2].children[0].value);
+      const totalCaloriesForIngredient = quantity * caloriesPerUnit;
+      ingredientRow.cells[3].textContent = totalCaloriesForIngredient;
+      totalCalories += totalCaloriesForIngredient;
+    }
+    totalCaloriesElement.textContent = `Total Calories: ${totalCalories}`;
+  }
+</script>

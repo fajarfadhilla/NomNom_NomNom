@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+      * {
+        margin: 0;
+        padding: 0;
+        outline: none;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;     
+       }
+
+       @font-face {
+        font-family: 'MyCustomFont';
+        src: url('font/Copyduck.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        }
+
+        li, a, button {
+        font-family: sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: #EFACAC;
+        text-decoration: none;
+       }
+
+       .container-navbar {
+         background: #fff;
+         width: 1200px;
+         border-radius: 25px;
+         box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+         position: absolute;
+         top: 10%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+       }
+
+       header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10%;
+       }
+
+       .logo {
+        cursor: pointer;
+       }
+
+       .nav-links {
+        list-style: none;
+       }
+
+       .nav-links li {
+        display: inline-block;
+        padding: 0px 50px;
+       }
+
+       .nav-links li a {
+        transition: all 0.3s ease 0s;
+       }
+
+       .nav-links li a:hover {
+        color: black;
+        background-color: bisque;
+        width: 100px;
+        padding: 20px 100px;
+        border-radius: 25px;
+       }
+
+       ::placeholder{
+        color: white;
+       }
+
+       .search-bar input[type=text] {
+        position: absolute;
+        left: 50%;
+        width: 600px;
+        float: none;
+        background-color: #d67066;
+        padding: 6px;
+        text-align: center;
+        border: none;
+        top: 20%;
+        font-size: 17px;
+        border-radius: 20px;
+        transform: translate(-50%, -50%);
+       }
+
+
+.main {
+  max-width: 1100px;
+  margin: 5% auto;
+}
+
+.ngoahahaha {
+          background: url('fud/explore fud.jpg') no-repeat center center/cover;
+          min-height: 550px;
+          background-attachment: fixed; 
+        }
+
+
+.greeting{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.greeting h1 {
+font-family: "MyCustomFont", sans-serif;
+margin-top: 20px;
+font-size: 100px;
+word-break: break-all;
+color: white;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 8px -16px;
+}
+
+.column {
+  flex: 1 0 25%;
+  padding: 8px;
+}
+
+
+.content {
+  background-color: #F7C8C8;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  width: 350px;
+}
+
+.contributor 
+{
+              display: flex;
+              justify-content: space-between; 
+              align-items: center; 
+              width: 300px; 
+              padding: 10px;
+              background-color: #ffffff; 
+              border-radius: 10px;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+              margin: 20px auto;
+        }
+
+        .contributor-name {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+
+.fud-photo{
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.fud-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nama-fud{
+    text-align: center;
+    padding: 10px;
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.desk-fud{
+    padding: 10px;
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.recipes-links{
+  text-align: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.tambah-baru{
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.add-recipe{
+  text-align: center;
+  width: 150px;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: #d67066;
+  color: #ffffff;
+}
+
+footer {
+            background-color: #ef5350;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+</style>
+</head>
+<body>
+    <body style="background-color: #EFACAC;">
+
+        <div class="container-navbar">
+            <header>
+                <a href="beranda.html">
+                  <img class="logo" src="icon/nom nom Icon b.png" alt="logo" width="80">
+                </a>
+                <nav>
+                  <ul class="nav-links">
+                    <li>
+                      <a href="explore.html"><img class="icon" src="icon/explore icon.png" alt="explore" width="10px"> Explore</a>
+                    </li>
+                    <li>
+                      <a href="saved.html"><img class="icon" src="icon/saved icon.png" alt="saved" width="10px"> Saved</a>
+                    </li>
+                    <li>
+                      <a href="updates.html"><img class="icon" src="icon/update icon.png" alt="updates" width="10px"> Updates</a>
+                    </li>
+                  </ul>
+                </nav>
+              <a href="profile.html">
+                  <img class="Icon" src="icon/profile icon.png" alt="profile" width="40">
+              </a>
+            </header>
+          </div>
+  
+    <div class="search-bar">
+      <input type="text" placeholder="Search.." style="color: white;">
+    </div>
+    <div class="ngoahahaha"></div>
+    <div class="greeting">
+      <h1>Nom-Nom</h1>
+      <img src="Sunny.png" width="500px">
+  </div>
+    <div class="main">
+
+
+<hr>
+
+        <div class="row">
+        <div class="column">
+            <div class="content">
+                <div class="contributor">
+                    <img class="contributor-icon" src="icon/profile icon.png" width="20px">
+                    <div class="contributor-name">Mas Budi</div>
+                    <img class="save-recipe" src="icon/saved icon.png">
+                </div>
+                <img class="fud-photo" src="fud/ayam-bumbu-lengkuas.jpg">
+                <h3 class="nama-fud">Ayam Goreng Lengkuas</h3>
+                <p class="desk-fud">Ayam Goreng Lengkuas adalah hidangan Indonesia yang merupakan ayam yang digoreng dalam minyak goreng. Dalam dunia internasional, istilah ayam goreng merujuk kepada cara Indonesia dalam memasak ayam yang digoreng dan memiliki bumbu yang lebih kaya.</p>
+                <a class="recipes-links" href="ayam-bumbu-lengkuas.html">Lihat Resep</a>
+              </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <div class="contributor">
+                    <img class="contributor-icon" src="icon/profile icon.png" width="20px">
+                    <div class="contributor-name">Mas Agus</div>
+                    <img class="save-recipe" src="icon/saved icon.png">
+                </div>
+                <img class="fud-photo" src="fud/sate-ayam.jpg">
+                <h3 class="nama-fud">Sate Premium</h3>
+                <p class="desk-fud">Potongan daging ayam kampung pilihan dipanggang sempurna dengan bumbu rempah spesial. Disajikan dengan saus kacang premium, lontong, dan acar, sate ini menampilkan cita rasa autentik dengan tampilan elegan.</p>
+                <a class="recipes-links" href="recipes/sate-ayam.html">Lihat Resep</a>
+              </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <div class="contributor">
+                    <img class="contributor-icon" src="icon/profile icon.png" width="20px">
+                    <div class="contributor-name">Kapal Lawd</div>
+                    <img class="save-recipe" src="icon/saved icon.png">
+                </div>
+                <img class="fud-photo" src="fud/mie-goreng.jpg">
+                <h3 class="nama-fud">Mie Goreng Spesial</h3>
+                <p class="desk-fud">Mie kuning kenyal yang digoreng dengan teknik sempurna, dipadu dengan udang segar, daging sapi premium, dan sayuran pilihan. Ditambah sentuhan kecap khas dan taburan bawang goreng renyah, menciptakan harmoni rasa yang lezat dan berkelas dalam setiap suapannya.</p>
+                <a class="recipes-links" href="recipes/mie-goreng.html">Lihat Resep</a>
+              </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <div class="contributor">
+                    <img class="contributor-icon" src="icon/profile icon.png" width="20px">
+                    <div class="contributor-name">Madun</div>
+                    <img class="save-recipe" src="icon/saved icon.png">
+                </div>
+                <img class="fud-photo" src="fud/infused-wotah.jpg">
+                <h3 class="nama-fud">Infused Water Premium</h3>
+                <p class="desk-fud">Kombinasi segar dari irisan lemon Sicilia, stroberi organik, dan daun mint segar yang direndam dalam air mineral murni. Setiap tegukan memberikan kesegaran alami dengan aroma buah yang lembut, menciptakan sensasi rasa yang menyegarkan sekaligus menenangkan.</p>
+                <a class="recipes-links" href="recipes/infused-wotah.html">Lihat Resep</a>
+              </div>
+        </div>
+        </div>
+        <div class="tambah-baru">
+          <h1>Tidak menemukan resep yang anda mau?</h1>
+          <a class="add-recipe" href="tambah-resep.html">Tambah di sini!</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>perut kenyang, hatipun senang -Ehsan</p>
+    </footer>
+
+</body>
+</html>

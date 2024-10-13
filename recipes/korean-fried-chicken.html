@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resep Ayam Bumbu Lengkuas</title>
+    <style>
+           * {
+        margin: 0;
+        padding: 0;
+        outline: none;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;     
+       }
+
+       @font-face {
+        font-family: 'MyCustomFont';
+        src: url('font/Copyduck.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        }
+
+
+       nav li, a, button {
+        font-family: sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: #EFACAC;
+        text-decoration: none;
+       }
+
+       .container-navbar {
+         background: #fff;
+         width: 1200px;
+         border-radius: 25px;
+         box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+         position: absolute;
+         top: 10%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+       }
+
+       header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10%;
+       }
+
+       .logo {
+        cursor: pointer;
+       }
+
+       .nav-links {
+        list-style: none;
+       }
+
+       .nav-links li {
+        display: inline-block;
+        padding: 0px 50px;
+       }
+
+       .nav-links li a {
+        transition: all 0.3s ease 0s;
+       }
+
+       .nav-links li a:hover {
+        color: black;
+        background-color: bisque;
+        width: 100px;
+        padding: 20px 100px;
+        border-radius: 25px;
+       }
+
+       ::placeholder{
+        color: white;
+       }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7cccc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .content{
+            margin-top: 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #ffbcb6;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            align-items: center;
+            text-align: center;
+            border-radius: 40px;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding-top: 20px;
+            
+        }
+
+        .recipe-header {
+            text-align: center;
+        }
+
+        .recipe-image {
+            width: 600px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .recipe-image img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tags {
+            margin-top: 20px;
+        }
+
+        .tags button {
+            background-color: #ffffff;
+            color: #ff4f4f;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 5px 15px;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .tags button:hover {
+            background-color: #ff7878;
+            color: white;
+            border: none;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5em;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 20px;
+            color: #ff7878;
+        }
+
+        .calories {
+            font-size: 0.8em;
+            color: #ff7878;
+        }
+
+        .description, .ingredients, .instructions {
+            background-color: #fff;
+            text-align: left;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .comments {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 100px;
+        }
+
+        .comments input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            outline: none;
+        }
+
+        .comments input[type="text"]:focus {
+            border-color: #ff7878;
+        }
+
+        .comments button {
+            padding: 10px 15px;
+            background-color: #ff7878;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .comments button:hover {
+            background-color: #ff4f4f;
+        }
+
+        #comment-list {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .comment-item {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #ef5350;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-navbar">
+        <header>
+            <a href="../beranda.html">
+              <img class="logo" src="../icon/nom nom Icon b.png" alt="logo" width="80">
+            </a>
+            <nav>
+              <ul class="nav-links">
+                <li>
+                  <a href="../explore.html"><img class="icon" src="../icon/explore icon.png" alt="explore" width="10px"> Explore</a>
+                </li>
+                <li>
+                  <a href="../saved.html"><img class="icon" src="../icon/saved icon.png" alt="saved" width="10px"> Saved</a>
+                </li>
+                <li>
+                  <a href="../updates.html"><img class="icon" src="../icon/update icon.png" alt="updates" width="10px"> Updates</a>
+                </li>
+              </ul>
+            </nav>
+          <a href="../profile.html">
+              <img class="Icon" src="../icon/profile icon.png" alt="profile" width="40">
+          </a>
+        </header>
+      </div>
+
+      <div class="ngoahahaha"></div>
+
+      <div class="content">
+        <div class="container">
+            <div class="recipe-header">
+                <img src="../fud/koran fried chicken.jpg" alt="Ayam korea" class="recipe-image">
+                <h1>Ayam Bumbu Lengkuas</h1>
+                <div class="tags">
+                    <button>Minyak Zaitun</button>
+                    <button>Ayam</button>
+                    <button>Tepung</button>
+                    <button>Telur</button>
+                    <button>Jahe</button>
+                    <button>Madu</button>
+                    <button>Wijen</button>
+                </div>
+                <h1><span class="calories">275.6 kal (persaji)</span></h1>
+            </div>
+    
+            <div class="description">
+                <h2>Deskripsi Makanan</h2>
+                <p>Nomnomonomonomonomonomonomonomonomnomnomonomnom.</p>
+            </div>
+    
+            <div class="ingredients">
+                <h2>Alat dan Bahan</h2>
+                <hr>
+                <div class="bahan">
+                    <li>500 gram fillet dada ayam, potong dadu</li>
+                    <li>1/2 sdt garam</li>
+                    <li>1/2 sdt lada</li>
+                    <li>1 bawang putih-parut halus</li>
+                    <li>1 telur-kocok</li>
+                    <li>60 gram tepung terigu</li>
+                    <li>20 gram maizena</li>
+                    <li>2 sdm minyak zaitun</li>
+                    <li>Untuk saus:</li>
+                    <li>1 bawang bombay-iris</li>
+                    <li>3 bawang putih-cincang</li>
+                    <li>1 cm jahe -geprek</li>
+                    <li>2 sdm saus tiram</li>
+                    <li>2 sdm kecap manis</li>
+                    <li>2 sdm madu</li>
+                    <li>1 sdm bubuk cabe</li>
+                    <li>3 sdm saos tomat</li>
+                    <li>1 sdm saos sambal</li>
+                    <li>30 ml air</li>
+                    <li>Topping:</li>
+                    <li>Secukupnya daun bawang iris</li>
+                    <li>Secukupnya wijen</li>
+                </div>
+            </div>
+    
+            <div class="instructions">
+                <h2>Cara Membuat</h2>
+                <hr>
+                <div class="cara masak">
+                        <li>Marinasi ayam dengan,garam,lada dan bawang putih. Taruh dikulkas selama 30 menit.</li>
+                        <li>Campur tepung terigu dan maizena,aduk rata. Masukkan ayam yang sudah dimarinasi ke telur kemudian balur ke tepung dan goreng hingga kekuningan angkat. Biarkan 5 menit lalu goreng lagi hingga krispy.</li>
+                        <li>Panaskan minyak zaitun, lalu tumis bawang bombay+bawang putih+jahe hingga harum, tambahkan air dan bahan saus lainnya. Masaknhingga mendidih dan saus mengental, masukkan ayam dan aduk sebentar. Angkat.</li>
+                        <li>Tata dipiriring, beri potongan bawang daun dan wijen.</li>
+                </div>
+            </div>
+    
+            <div class="comments">
+                <h2>Komentar</h2>
+                <input type="text" id="comment-input" placeholder="Tulis komentar Anda">
+                <button id="comment-btn">Kirim</button>
+                <div id="comment-list"></div>
+            </div>
+        </div>    
+      </div>
+   
+    <footer>
+        <p>perut kenyang, hatipun senang -Ehsan</p>
+    </footer>
+
+    <script>
+        document.getElementById('comment-btn').addEventListener('click', function() {
+            const commentInput = document.getElementById('comment-input');
+            const commentList = document.getElementById('comment-list');
+            const comment = commentInput.value.trim();
+
+            if (comment !== '') {
+                const commentItem = document.createElement('div');
+                commentItem.className = 'comment-item';
+                commentItem.textContent = comment;
+                commentList.appendChild(commentItem);
+                commentInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

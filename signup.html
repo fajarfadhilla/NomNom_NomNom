@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SignUp Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      outline: none;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      height: 100vh;
+      width: 100%;
+      background: #EFACAC;
+    }
+    .container {
+      background: #fff;
+      width: 410px;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .text {
+      font-size: 35px;
+      font-weight: 600;
+      text-align: center;
+    }
+    form {
+      margin-top: -20px;
+    }
+    .data {
+      height: 45px;
+      width: 100%;
+      margin: 40px 0;
+    }
+    label {
+      font-size: 18px;
+    }
+    input {
+      height: 100%;
+      width: 100%;
+      padding-left: 10px;
+      font-size: 17px;
+      border: 1px solid silver;
+    }
+    input:focus {
+      border-color: #3498db;
+      border-bottom-width: 2px;
+    }
+    .forgot-pass {
+      margin-top: -8px;
+    }
+    .forgot-pass a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    .forgot-pass a:hover {
+      text-decoration: underline;
+    }
+    .gas {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      color: #fff;
+      background: #EFACAC;
+    }
+    .login-link {
+      text-align: center;
+    }
+    .login-link a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="text">
+      <img src="icon/nom nom Icon b.png" width="120">
+    </div>
+    <div class="text">Sign Up</div>
+    <form action="/signup" method="POST"> 
+      <div class="data">
+        <label>Full Name</label>
+        <input type="text" name="fullname" required>
+      </div>
+      <div class="data">
+        <label>Username</label>
+        <input type="text" name="username" required>
+      </div>
+      <div class="data">
+        <label>Email or Phone</label>
+        <input type="text" name="email" required>
+      </div>
+      <div class="data">
+        <label>Password</label>
+        <input type="password" name="password" required>
+      </div>
+      <div class="forgot-pass">
+        <a href="#">Forgot Password?</a>
+      </div>
+      <div class="gas">
+          <a href="beranda.html" style="color: #fff; text-decoration: none;">Sign Up</a>
+      </div>
+      <div class="login-link">
+        Already a member? <a href="login.html">Login Now</a>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

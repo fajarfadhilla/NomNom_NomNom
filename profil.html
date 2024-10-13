@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .3s ease;
+      background-color: red;
+    }
+    
+    .container:hover .overlay {
+      opacity: 1;
+    }
+    
+    .icon {
+      color: white;
+      font-size: 100px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    
+    .fa-user:hover {
+      color: #eee;
+    }
+    </style>
+    </head>
+    <body>
+
+    <div class="container">
+      <img src="catzz.jpg" alt="Avatar" class="image">
+      <div class="overlay">
+      <a href="#" class="icon" title="User Profile">
+        <i class="fa fa-user"></i>
+      </a>
+      </div>
+    </div>
+    
+    </body>
+    </html>
+    
+<h3>Edit Profil</h3>
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Nama">
+
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" placeholder="Username">
+
+    <label for="email">email</label>
+    <input type="text" id="email" name="email" placeholder="email">
+
+    <label for="bio">Bio</label>
+    <textarea id="bio" name="bio" placeholder="Write something.." style="height:150px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>

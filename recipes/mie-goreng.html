@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resep Ayam Bumbu Lengkuas</title>
+    <style>
+           * {
+        margin: 0;
+        padding: 0;
+        outline: none;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;     
+       }
+
+       @font-face {
+        font-family: 'MyCustomFont';
+        src: url('font/Copyduck.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        }
+
+
+       nav li, a, button {
+        font-family: sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: #EFACAC;
+        text-decoration: none;
+       }
+
+       .container-navbar {
+         background: #fff;
+         width: 1200px;
+         border-radius: 25px;
+         box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+         position: absolute;
+         top: 10%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+       }
+
+       header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10%;
+       }
+
+       .logo {
+        cursor: pointer;
+       }
+
+       .nav-links {
+        list-style: none;
+       }
+
+       .nav-links li {
+        display: inline-block;
+        padding: 0px 50px;
+       }
+
+       .nav-links li a {
+        transition: all 0.3s ease 0s;
+       }
+
+       .nav-links li a:hover {
+        color: black;
+        background-color: bisque;
+        width: 100px;
+        padding: 20px 100px;
+        border-radius: 25px;
+       }
+
+       ::placeholder{
+        color: white;
+       }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7cccc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .content{
+            margin-top: 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #ffbcb6;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            align-items: center;
+            text-align: center;
+            border-radius: 40px;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding-top: 20px;
+            
+        }
+
+        .recipe-header {
+            text-align: center;
+        }
+
+        .recipe-image {
+            width: 600px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .recipe-image img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tags {
+            margin-top: 20px;
+        }
+
+        .tags button {
+            background-color: #ffffff;
+            color: #ff4f4f;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 5px 15px;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .tags button:hover {
+            background-color: #ff7878;
+            color: white;
+            border: none;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5em;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 20px;
+            color: #ff7878;
+        }
+
+        .calories {
+            font-size: 0.8em;
+            color: #ff7878;
+        }
+
+        .description, .ingredients, .instructions {
+            background-color: #fff;
+            text-align: left;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .comments {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 100px;
+        }
+
+        .comments input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            outline: none;
+        }
+
+        .comments input[type="text"]:focus {
+            border-color: #ff7878;
+        }
+
+        .comments button {
+            padding: 10px 15px;
+            background-color: #ff7878;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .comments button:hover {
+            background-color: #ff4f4f;
+        }
+
+        #comment-list {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .comment-item {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #ef5350;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-navbar">
+        <header>
+            <a href="../beranda.html">
+              <img class="logo" src="../icon/nom nom Icon b.png" alt="logo" width="80">
+            </a>
+            <nav>
+              <ul class="nav-links">
+                <li>
+                  <a href="../explore.html"><img class="icon" src="../icon/explore icon.png" alt="explore" width="10px"> Explore</a>
+                </li>
+                <li>
+                  <a href="../saved.html"><img class="icon" src="../icon/saved icon.png" alt="saved" width="10px"> Saved</a>
+                </li>
+                <li>
+                  <a href="../updates.html"><img class="icon" src="../icon/update icon.png" alt="updates" width="10px"> Updates</a>
+                </li>
+              </ul>
+            </nav>
+          <a href="../profile.html">
+              <img class="Icon" src="../icon/profile icon.png" alt="profile" width="40">
+          </a>
+        </header>
+      </div>
+
+      <div class="ngoahahaha"></div>
+
+      <div class="content">
+        <div class="container">
+            <div class="recipe-header">
+                <img src="../fud/mie-goreng.jpg" alt="mi" class="recipe-image">
+                <h1>Mie Goreng</h1>
+                <div class="tags">
+                    <button>Mie</button>
+                    <button>Sawi</button>
+                    <button>Jahe</button>
+                    <button>Bawang</button>
+                    <button>Daun jeruk</button>
+                </div>
+                <h1><span class="calories">229 kal (persaji)</span></h1>
+            </div>
+    
+            <div class="description">
+                <h2>Deskripsi Makanan</h2>
+                <p>Nomnomonomonomonomonomonomonomonomnomnomonomnom.</p>
+            </div>
+    
+            <div class="ingredients">
+                <h2>Alat dan Bahan</h2>
+                <hr>
+                <div class="bahan">
+                    <li>1 bungkus mie (cap 3 ayam)</li>
+                    <li>10 lembar daun sawi putih</li>
+                    <li>2 siung bawang putih, iris korek</li>
+                    <li>1 iris tebal jahe, iris korek</li>
+                    <li>2 lembar daun jeruk, iris tipis panjang</li>
+                    <li>1 butir telur</li>
+                    <li>1 sdt garam</li>
+                    <li>1/2 sdt merica</li>
+                    <li>1 sdm kecap manis</li>
+                    <li>3 sdm minyak untuk tumis</li>
+                </div>
+            </div>
+    
+            <div class="instructions">
+                <h2>Cara Membuat</h2>
+                <hr>
+                <div class="cara masak">
+                        <li>Bersihkan sawi, potong membujur 1 cm, sisihkan, bawang putih iris dan potong korek, jahe potong korek, daun jeruk iris memanjang, sementara itu rebus mie sesuai instruksi kemasan.</li>
+                        <li>Tumis bawang, jahe, daun jeruk dengan minyak masukkan telur, aduk orek, masukkan daun sawi, aduk kembali.</li>
+                        <li>Tiriskan mie (beri sedikit minyak biar gak lengket). campur ke menu orek telur sawi, beri merica dan garam, aduk rata.</li>
+                        <li>Sambil cicip rasa, tambajkan kecap, aduk rata kembali.</li>
+                </div>
+            </div>
+    
+            <div class="comments">
+                <h2>Komentar</h2>
+                <input type="text" id="comment-input" placeholder="Tulis komentar Anda">
+                <button id="comment-btn">Kirim</button>
+                <div id="comment-list"></div>
+            </div>
+        </div>    
+      </div>
+   
+    <footer>
+        <p>perut kenyang, hatipun senang -Ehsan</p>
+    </footer>
+
+    <script>
+        document.getElementById('comment-btn').addEventListener('click', function() {
+            const commentInput = document.getElementById('comment-input');
+            const commentList = document.getElementById('comment-list');
+            const comment = commentInput.value.trim();
+
+            if (comment !== '') {
+                const commentItem = document.createElement('div');
+                commentItem.className = 'comment-item';
+                commentItem.textContent = comment;
+                commentList.appendChild(commentItem);
+                commentInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Beranda</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        outline: none;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;     
+       }
+
+       @font-face {
+        font-family: 'MyCustomFont';
+        src: url('font/Copyduck.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        }
+
+
+       li, a, button {
+        font-family: sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: #EFACAC;
+        text-decoration: none;
+       }
+
+       .container-navbar {
+         background: #fff;
+         width: 1200px;
+         border-radius: 25px;
+         box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+         position: absolute;
+         top: 10%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+       }
+
+       header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10%;
+       }
+
+       .logo {
+        cursor: pointer;
+       }
+
+       .nav-links {
+        list-style: none;
+       }
+
+       .nav-links li {
+        display: inline-block;
+        padding: 0px 50px;
+       }
+
+       .nav-links li a {
+        transition: all 0.3s ease 0s;
+       }
+
+       .nav-links li a:hover {
+        color: black;
+        background-color: bisque;
+        width: 100px;
+        padding: 20px 100px;
+        border-radius: 25px;
+       }
+
+       ::placeholder{
+        color: white;
+       }
+
+       .search-bar input[type=text] {
+        position: absolute;
+        left: 50%;
+        width: 600px;
+        float: none;
+        background-color: #d67066;
+        padding: 6px;
+        text-align: center;
+        border: none;
+        top: 20%;
+        font-size: 17px;
+        border-radius: 20px;
+        transform: translate(-50%, -50%);
+       }
+
+       .ngoahahaha {
+          background: url('fud/ngoahahaha.jpg') no-repeat center center/cover;
+          min-height: 750px;
+          background-attachment: fixed; 
+        }
+
+        .greeting h2 {
+          font-family: "MyCustomFont", sans-serif;
+          color: white;
+          padding: 20px;
+          text-align: center;
+          background-color: #d67066;
+          font-size: 48px;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .content{
+          padding: 50px 10%;
+          background-image: linear-gradient(#d67066, #00000000);
+        }
+
+        .slider-container {
+          width: 100%;
+          height: 620px;
+          background-color: rgb(0, 0, 0, 0.3);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 5%;
+          left: 50%;
+        }
+
+        .slider {
+            width: 80%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            width: 100%;
+            flex: 1 0 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide img {
+            width: 800px;
+            border-radius: 10px;
+        }
+
+        .prev, .next{
+          cursor: pointer;
+          position: absolute;
+          left: 87px;
+          top: 50%;
+          width: auto;
+          padding: 16px;
+          margin-top: -22px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 10px 10px 0;
+          user-select: none;
+        }
+
+        .next {
+          left: 845px;
+          border-radius: 10px 0 0 10px;
+        }
+
+        .prev:hover, .next:hover {
+          background-color: rgba(0,0,0,0.8);
+        }
+
+        .dots {
+          text-align: center;
+          position: absolute;
+          margin-top: 38%;
+          width: 100%;
+        }
+
+        .dot {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 5px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+          background-color: #717171;
+        }
+
+
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+
+        .fav-recipes{
+          padding: 20px;
+          margin-top: 5%;
+          border-radius: 10px;
+          background-color: white;
+          color:black;
+        }
+
+        .recipes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 2%;
+            gap: 30px;
+        }
+
+        .recipe-card {
+            background-color: white;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .recipe-card h3 {
+            margin: 15px 0;
+            font-size: 20px;
+        }
+
+        .recipe-card p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .recipe-card a {
+            text-decoration: none;
+            color: #ef5350;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .recipe-card a:hover {
+            color: #ff8a80;
+        }
+
+        .mas-budi {
+          position: fixed;
+          bottom: -10px;
+          right: 60px;
+          width: 150px;
+          height: auto;
+          border-radius: 50%; /
+        }
+
+        .text-block {
+          position: fixed;
+          bottom: 10px;
+          right: 230px;
+          background-color: rgba(0, 0, 0, 0.7);
+          color: white;
+          padding: 15px;
+          border-radius: 10px;
+          max-width: 300px;
+          font-size: 16px;
+        }
+
+        .text-block h4{
+          margin: 0 0 10px 0;
+          font-size: 18px;
+        }
+
+        .tambah-baru{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.add-recipe{
+  text-align: center;
+  width: 150px;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: #d67066;
+  color: #ffffff;
+}
+
+        footer {
+            background-color: #ef5350;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+      </style>
+  </head>
+  <body>
+      <body style="background-color: #EFACAC;">
+        <div class="container-navbar">
+          <header>
+              <a href="beranda.html">
+                <img class="logo" src="icon/nom nom Icon b.png" alt="logo" width="80">
+              </a>
+              <nav>
+                <ul class="nav-links">
+                  <li>
+                    <a href="explore.html"><img class="icon" src="icon/explore icon.png" alt="explore" width="10px"> Explore</a>
+                  </li>
+                  <li>
+                    <a href="saved.html"><img class="icon" src="icon/saved icon.png" alt="saved" width="10px"> Saved</a>
+                  </li>
+                  <li>
+                    <a href="updates.html"><img class="icon" src="icon/update icon.png" alt="updates" width="10px"> Updates</a>
+                  </li>
+                </ul>
+              </nav>
+            <a href="profile.html">
+                <img class="Icon" src="icon/profile icon.png" alt="profile" width="40">
+            </a>
+          </header>
+        </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search.." style="color: white;">
+  </div>
+
+  <div class="ngoahahaha"></div>
+
+  <div class="greeting">
+    <h2 style="text-align: center;">Masak sendiri, makan sendiri :'D</h2>
+  </div>
+
+  <section class="content">
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slides">
+          <div class="slide">
+            <img src="fud/fud beranda 1.jpg" alt="makanan-1" width="800px">
+          </div>
+          <div class="slide">
+            <img src="fud/fud beranda 2.jpg" alt="makanan-2" width="800px">
+          </div>
+          <div class="slide">
+            <img src="fud/fud beranda 3.jpg" alt="makanan-3" width="800px">
+          </div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+      </div>
+      <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </div>
+
+    <div class="fav-recipes">
+      <h1 style="text-align: center;">Resep favorit dari kami</h1>
+    </div>
+
+    <div class="recipes">
+      <div class="recipe-card">
+          <img src="fud/spaghetti carbonara.jpg" alt="spaghetti-carbonara">
+          <h3>Spaghetti Carbonara</h3>
+          <p>Spaghetti yang uenak wes pokoknya, bikinnya gampang (cuma lama aja).</p>
+          <a href="recipes/spagghetti-carbonara.html">Lihat Resep</a>
+      </div>
+      <div class="recipe-card">
+          <img src="fud/koran fried chicken.jpg" alt="korean-fried-chicken">
+          <h3>Korean Fried Chicken</h3>
+          <p>Nyam nyam (saya lapar).</p>
+          <a href="recipes/korean-fried-chicken.html">Lihat Resep</a>
+      </div>
+      <div class="recipe-card">
+          <img src="fud/ichigo daifuku.jpg" alt="ichigo-daifuku">
+          <h3>Ichigo Daifuku</h3>
+          <p>Anda lapar? saya juga.</p>
+          <a href="recipes/ichigo-daifuku.html">Lihat Resep</a>
+      </div>
+    </div>
+    <div class="tambah-baru">
+      <h1>Mau menambahkan resep anda sendiri?</h1>
+      <a class="add-recipe" href="tambah-resep.html">Tambah di sini!</a>
+    </div>
+  </section>
+
+  <div class="mas-budi">
+    <img src="Sunny.png" width="200px" autoplay>
+  </div>
+
+  <div class="text-block">
+    <h4>Ayo Masak Dengan Keceriaan!</h4>
+    <p>Memasak dengan hati riang bisa meningkatkan rasa kenyang</p>
+  </div>
+
+  <footer>
+    <p>perut kenyang, hatipun senang -Ehsan</p>
+  </footer>
+</body>
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slide");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "flex";  
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
+</html>

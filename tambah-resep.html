@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Recipe</title>
+    <style>
+            * {
+      margin: 0;
+      padding: 0;
+      outline: none;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    li, a, button {
+        font-family: sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: #EFACAC;
+        text-decoration: none;
+       }
+
+       .container-navbar {
+         background: #fff;
+         width: 1200px;
+         border-radius: 25px;
+         box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+         position: absolute;
+         top: 10%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+       }
+
+       header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10%;
+       }
+
+       .logo {
+        cursor: pointer;
+       }
+
+       .nav-links {
+        list-style: none;
+       }
+
+       .nav-links li {
+        display: inline-block;
+        padding: 0px 50px;
+       }
+
+       .nav-links li a {
+        transition: all 0.3s ease 0s;
+       }
+
+       .nav-links li a:hover {
+        color: black;
+        background-color: bisque;
+        width: 100px;
+        padding: 20px 100px;
+        border-radius: 25px;
+       }
+
+       ::placeholder{
+        color: black;
+       }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EFACAC;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+        }
+
+        .recipe-upload {
+            align-items: center;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 800px;
+            padding: 30px;
+            margin-top: 10%;
+        }
+
+        .recipe-header h3 {
+            margin: 0;
+            text-align: center;
+            color: #333;
+        }
+
+        .recipe-form {
+            margin-top: 20px;
+        }
+
+        .recipe-text {
+            width: 100%;
+            height: 150px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .recipe-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .upload-icon {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .upload button{
+            padding: 12px 30px;
+            background-color: #EFACAC;
+            margin-top: 40px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .upload:hover button{
+            background-color: #d67066;
+        }
+
+        .calories-cal button{
+            padding: 12px 30px;
+            background-color: #d67066;
+            margin-top: 40px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .category-box {
+            margin-top: 20px;
+        }
+
+        .category-box h4 {
+            margin: 0;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        #category-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .category-item {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .upload-icon{
+            padding: 30px;
+            width: 100px;
+            border-radius: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #EFACAC;
+        }
+
+        .category-item:hover {
+            background-color: #ffe1e9;
+        }
+
+        .category-item.selected {
+            background-color: #d67066;
+            color: white;
+        }
+
+        .calories-cal{
+        background-color: #EFACAC;
+        padding: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-radius: 20px;
+        text-align: center;
+        }
+
+
+        .add-category-box {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        #category-input {
+            width: calc(100% - 50px);
+            height: 30px;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .add-category-btn {
+            width: 40px;
+            height: 40px;
+            background-color: #d67066;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 24px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .add-category-btn:hover {
+            background-color: #d67066;  
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container-navbar">
+        <header>
+            <a href="beranda.html">
+              <img class="logo" src="icon/nom nom Icon b.png" alt="logo" width="80">
+            </a>
+            <nav>
+              <ul class="nav-links">
+                <li>
+                  <a href="explore.html"><img class="icon" src="icon/explore icon.png" alt="explore" width="10px"> Explore</a>
+                </li>
+                <li>
+                  <a href="saved.html"><img class="icon" src="icon/saved icon.png" alt="saved" width="10px"> Saved</a>
+                </li>
+                <li>
+                  <a href="updates.html"><img class="icon" src="icon/update icon.png" alt="updates" width="10px"> Updates</a>
+                </li>
+              </ul>
+            </nav>
+          <a href="profile.html">
+              <img class="Icon" src="icon/profile icon.png" alt="profile" width="40">
+          </a>
+        </header>
+      </div>
+
+    <div class="recipe-upload">
+        <div class="recipe-header">
+            <h3>Tambah Resepmu sendiri!</h3>
+        </div>
+        <div class="recipe-form">
+            <textarea placeholder="Apa nama resepmu?" class="recipe-text"></textarea>
+            <textarea placeholder="Bagaimana deskripsi resepmu?" class="recipe-text"></textarea>
+            <div class="recipe-actions">
+                <label for="image-upload" class="image-upload-label">
+                    <h3>Tambah gambar</h3>
+                    <img src="icon/add icon.png" alt="Image Upload" class="upload-icon">
+                </label>
+                <input type="file" id="image-upload" class="file-input" accept="image/*">
+            </div>
+            <textarea placeholder="Apa saja bahannya?" class="recipe-text"></textarea>
+            <textarea placeholder="Bagaimana cara membuatnya?" class="recipe-text"></textarea> 
+
+            <div class="category-box">
+                <h4>Select Categories:</h4>
+                <div id="category-list">
+                    <div class="category-item" data-category="Daging">Daging</div>
+                    <div class="category-item" data-category="Sayuran">Sayuran</div>
+                    <div class="category-item" data-category="Ikan">Ikan</div>
+                    <div class="category-item" data-category="Bumbu">Bumbu</div>
+                    <div class="category-item" data-category="Minuman">Minuman</div>
+                </div>
+
+                <div class="add-category-box">
+                    <input type="text" id="category-input" placeholder="Add new category">
+                    <button class="add-category-btn" id="add-category-btn">+</button>
+                </div>
+            </div>
+            <div class="calories-cal">
+                <table id="ingredients">
+                  <tr>
+                    <th>Nama bahan</th>
+                    <th>Banyak</th>
+                    <th>Kalori per satuan</th>
+                    <th>Total Kalori</th>
+                  </tr>
+                  <tr>
+                    <td><input type="text" id="ingredient-1" /></td>
+                    <td><input type="number" id="quantity-1" /></td>
+                    <td><input type="number" id="calories-per-unit-1" /></td>
+                    <td id="total-calories-1"></td>
+                  </tr>
+                </table>
+                <button id="add-ingredient">Add Ingredient</button>
+                <p id="total-calories"></p>
+              </div>
+              
+<div class="upload">
+    <button onclick="submit_btn()">Post Recipe</button>
+</div>
+
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.category-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('selected');
+            });
+        });
+
+        document.getElementById('add-category-btn').addEventListener('click', function() {
+            const categoryInput = document.getElementById('category-input');
+            const newCategory = categoryInput.value.trim();
+            
+            if (newCategory) {
+                const categoryList = document.getElementById('category-list');
+                const categoryItem = document.createElement('div');
+                categoryItem.classList.add('category-item');
+                categoryItem.textContent = newCategory;
+                categoryItem.addEventListener('click', function() {
+                    this.classList.toggle('selected');
+                });
+                
+                categoryList.appendChild(categoryItem);
+                categoryInput.value = '';
+            }
+        });
+        const ingredientsTable = document.getElementById("ingredients");
+  const totalCaloriesElement = document.getElementById("total-calories");
+  const addIngredientButton = document.getElementById("add-ingredient");
+
+  addIngredientButton.addEventListener("click", addIngredient);
+
+  function addIngredient() {
+    const newRow = ingredientsTable.insertRow(-1);
+    newRow.innerHTML = `
+      <td><input type="text" /></td>
+      <td><input type="number" /></td>
+      <td><input type="number" /></td>
+      <td></td>
+    `;
+  }
+
+  ingredientsTable.addEventListener("input", calculateTotalCalories);
+
+  function calculateTotalCalories() {
+    let totalCalories = 0;
+    const rows = ingredientsTable.rows;
+    for (let i = 1; i < rows.length; i++) {
+      const ingredientRow = rows[i];
+      const quantity = parseInt(ingredientRow.cells[1].children[0].value);
+      const caloriesPerUnit = parseInt(ingredientRow.cells[2].children[0].value);
+      const totalCaloriesForIngredient = quantity * caloriesPerUnit;
+      ingredientRow.cells[3].textContent = totalCaloriesForIngredient;
+      totalCalories += totalCaloriesForIngredient;
+    }
+    totalCaloriesElement.textContent = `Total Calories: ${totalCalories}`;
+  }
+
+  function submit_btn() {
+    alert('Resep sudah ditambahkan!');
+  }
+    </script>
+</body>
+</html>
